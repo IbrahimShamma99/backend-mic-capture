@@ -20,7 +20,7 @@ class Microphone extends EventEmitter {
         if (isWin) {
             this.device = options.device || 'default';
         }
-        if (!isWin && !isMac) {
+        if ((!isWin && !isMac)|| isLinux) {
             this.device = options.device || 'plughw:1,0';
             this.format = undefined;
             this.formatEndian = undefined;
