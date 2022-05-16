@@ -1,5 +1,6 @@
 'use strict'
 const isMac = require('os').type() == 'Darwin';
+const isLinux = require('os').type() == 'Linux';
 const isWin = require('os').type().indexOf('Windows') > -1;
 const spawn = require('child_process').spawn;
 const EventEmitter = require('events');
