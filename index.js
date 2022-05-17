@@ -16,14 +16,12 @@ mic.on("error", (error) => {
 });
 const audio = "masa_ward.mp3";
 
-player.play(audio, function (err) {
-    if (err) throw err;
-  });
-
-
 setTimeout(() => {
   try {
     mic.stopRecording();
+    player.play(audio, function (err) {
+      if (err) throw err;
+    });
   } catch (e) {}
 
   // $ mplayer foo.mp3
