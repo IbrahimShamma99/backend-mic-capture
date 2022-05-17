@@ -1,8 +1,7 @@
 let Mic = require("./Mic");
 let mic = new Mic();
 const fs = require("fs");
-var player = require("play-sound")((opts = {}));
-
+const sound = require("sound-play");
 let micStream = mic.startRecording();
 
 var myWritableStream = fs.WriteStream("output.raw");
@@ -19,10 +18,9 @@ const audio = "masa_ward.mp3";
 setTimeout(() => {
   try {
     mic.stopRecording();
-    player.play(audio, function (err) {
-      if (err) throw err;
-    });
   } catch (e) {}
+
+  sound.play(audio);
 
   // $ mplayer foo.mp3
 
