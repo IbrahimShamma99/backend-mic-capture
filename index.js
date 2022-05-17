@@ -27,4 +27,4 @@ setTimeout(() => {
   // $ mplayer foo.mp3
 
   // access the node child_process in case you need to kill it on demand
-}, 10000);
+}, 5000);
